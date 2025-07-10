@@ -34,6 +34,8 @@ module.exports = {
     'react/button-has-type': 'warn',
     'i18next/no-literal-string': ['error', { markupOnly: true }],
     'react-jsx-wrap-multilines': 'off',
+    'max-len': ['error', { ignoreComments: true, code: 100 }],
+    'linebreak-style': 'off',
   },
   globals: {
     __IS_DEV__: true,
