@@ -32,7 +32,7 @@ module.exports = {
     quotes: ['warn', 'single', { avoidEscape: true }],
     'no-undef': 'off',
     'react/button-has-type': 'warn',
-    'i18next/no-literal-string': ['error', { markupOnly: true }],
+    'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['data-testid'] }],
     'react-jsx-wrap-multilines': 'off',
     'max-len': ['error', { ignoreComments: true, code: 100 }],
     'linebreak-style': 'off',
@@ -40,4 +40,12 @@ module.exports = {
   globals: {
     __IS_DEV__: true,
   },
+  overerides: [
+    {
+      files: ['**/src/**/*.test.{ts, tsx}'],
+      rules: {
+        'i18next/no-literal-string': 'off',
+      },
+    },
+  ],
 };
