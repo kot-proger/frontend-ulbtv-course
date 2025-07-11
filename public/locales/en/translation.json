@@ -3,5 +3,8 @@
   "Язык": "English",
   "Главная страница": "Main page",
   "Страница не найдена": "Page not found",
-  "О сайте": "AboutPage"
+  "О сайте": "AboutPage",
+  "Произошла непредвиденная ошибка": "Done some error",
+  "Обновить страницу": "Reload page",
+  "КнопкаОшибки": "BugButton"
 }

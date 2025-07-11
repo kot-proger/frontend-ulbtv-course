@@ -1,3 +1,4 @@
+/* eslint-disable object-curly-newline */
 import { classNames } from 'shared/lib/classNames/classNames';
 import { ButtonHTMLAttributes } from 'react';
 import cls from './Button.module.scss';
@@ -9,7 +10,7 @@ export enum ThemeButton {
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   theme?: ThemeButton;
-  type: 'submit' | 'reset' | 'button';
+  type?: 'submit' | 'reset' | 'button';
 }
 
 export const Button: React.FC<ButtonProps> = (props) => {

@@ -4,8 +4,9 @@
 }
 
 .clear {
-  background: none;
-  border: none;
+  background: white;
+  border: 1px solid grey;
+  border-radius: 5px;
   outline: none;
-  padding: 0;
+  padding: 4px;
 }
