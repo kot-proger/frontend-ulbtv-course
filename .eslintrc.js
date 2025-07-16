@@ -4,7 +4,7 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: ['plugin:react/recommended', 'airbnb', 'plugin:i18next/recommended'],
+  extends: ['plugin:react/recommended', 'airbnb', 'plugin:i18next/recommended', 'plugin:storybook/recommended'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -32,7 +32,10 @@ module.exports = {
     quotes: ['warn', 'single', { avoidEscape: true }],
     'no-undef': 'off',
     'react/button-has-type': 'warn',
-    'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['data-testid'] }],
+    'i18next/no-literal-string': [
+      'error',
+      { markupOnly: true, ignoreAttribute: ['data-testid', 'to'] },
+    ],
     'react-jsx-wrap-multilines': 'off',
     'max-len': ['error', { ignoreComments: true, code: 100 }],
     'linebreak-style': 'off',
@@ -42,7 +45,7 @@ module.exports = {
   },
   overerides: [
     {
-      files: ['**/src/**/*.test.{ts, tsx}'],
+      files: ['**/src/**/*.test.{ts, tsx}', './src/**/*.ts', './src/**/*.tsx'],
       rules: {
         'i18next/no-literal-string': 'off',
       },
