@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "unit": "jest --config ./config/jest/jest.config.ts",
+    "test:unit": "jest --config ./config/jest/jest.config.ts",
     "start": "npx webpack serve --env port=3000",
     "build:prod": "npx webpack --env mode=production",
     "build:dev": "npx webpack --env mode=development",
