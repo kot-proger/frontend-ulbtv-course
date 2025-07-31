@@ -1,5 +1,6 @@
 dist
 node_modules
-.vscode 
+.vscode
 *storybook.log
 storybook-static
+package-lock.json
