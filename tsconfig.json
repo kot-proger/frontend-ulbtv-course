@@ -19,5 +19,5 @@
       "module": "CommonJS"
     }
   },
-  "include": ["./config/jest/setupTest.ts"]
+  "include": ["./config/jest/setupTest.ts","./src/global.d.ts"]
 }
