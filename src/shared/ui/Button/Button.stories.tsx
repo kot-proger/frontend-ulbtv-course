@@ -1,7 +1,7 @@
 import { fn } from 'storybook/test';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { Button, ThemeButton } from './Button';
+import { Button, ButtonSize, ButtonTheme } from './Button';
 
 export default {
   title: 'shared/Button',
@@ -25,14 +25,28 @@ export const Primary = {
 export const Clear = {
   args: {
     children: 'text',
-    theme: ThemeButton.CLEAR,
+    theme: ButtonTheme.CLEAR,
   },
 };
 
 export const Outlined = {
   args: {
     children: 'text',
-    theme: ThemeButton.OUTLINE,
+    theme: ButtonTheme.OUTLINE,
+  },
+};
+
+export const Background = {
+  args: {
+    children: 'text',
+    theme: ButtonTheme.BACKGROUND,
+  },
+};
+
+export const BackgroundInverted = {
+  args: {
+    children: 'text',
+    theme: ButtonTheme.BACKGROUND_INVERTED,
   },
 };
 
@@ -46,7 +60,7 @@ export const PrimaryDark = {
 export const ClearDark = {
   args: {
     children: 'text',
-    theme: ThemeButton.CLEAR,
+    theme: ButtonTheme.CLEAR,
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };
@@ -54,7 +68,49 @@ export const ClearDark = {
 export const OutlinedDark = {
   args: {
     children: 'text',
-    theme: ThemeButton.OUTLINE,
+    theme: ButtonTheme.OUTLINE,
   },
   decorators: [ThemeDecorator(Theme.DARK)],
+};
+
+export const BackgroundDark = {
+  args: {
+    children: 'text',
+    theme: ButtonTheme.BACKGROUND,
+  },
+  decorators: [ThemeDecorator(Theme.DARK)],
+};
+
+export const BackgroundInvertedDark = {
+  args: {
+    children: 'text',
+    theme: ButtonTheme.BACKGROUND_INVERTED,
+  },
+  decorators: [ThemeDecorator(Theme.DARK)],
+};
+
+export const SquareM = {
+  args: {
+    children: '>',
+    theme: ButtonTheme.BACKGROUND_INVERTED,
+    square: true,
+  },
+};
+
+export const SquareL = {
+  args: {
+    children: '>',
+    theme: ButtonTheme.BACKGROUND_INVERTED,
+    square: true,
+    size: ButtonSize.L,
+  },
+};
+
+export const SquareXL = {
+  args: {
+    children: '>',
+    theme: ButtonTheme.BACKGROUND_INVERTED,
+    square: true,
+    size: ButtonSize.XL,
+  },
 };
