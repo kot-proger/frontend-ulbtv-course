@@ -4,3 +4,4 @@ node_modules
 *storybook.log
 storybook-static
 package-lock.json
+pnpm-lock.yaml

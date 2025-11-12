@@ -29,6 +29,13 @@ export const Clear = {
   },
 };
 
+export const ClearInverted = {
+  args: {
+    children: 'text',
+    theme: ButtonTheme.CLEAR_INVERTED,
+  },
+};
+
 export const Outlined = {
   args: {
     children: 'text',
@@ -61,6 +68,14 @@ export const ClearDark = {
   args: {
     children: 'text',
     theme: ButtonTheme.CLEAR,
+  },
+  decorators: [ThemeDecorator(Theme.DARK)],
+};
+
+export const ClearInvertedDark = {
+  args: {
+    children: 'text',
+    theme: ButtonTheme.CLEAR_INVERTED,
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };
