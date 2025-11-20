@@ -39,18 +39,14 @@ export const Sidebar: React.FC<SidebarProps> = ({ className }: SidebarProps) => 
         {collapsed ? '>' : '<'}
       </Button>
       <div className={cls.items}>
-        <div>
-          <AppLink className={cls.item} to={RoutePath.main} theme={AppLinkTheme.SECONDARY}>
-            <HomeIcon className={cls.icon} />
-            <span className={cls.link}>{t('Главная страница')}</span>
-          </AppLink>
-        </div>
-        <div>
-          <AppLink className={cls.item} to={RoutePath.about} theme={AppLinkTheme.SECONDARY}>
-            <AboutIcon className={cls.icon} />
-            <span className={cls.link}>{t('О сайте')}</span>
-          </AppLink>
-        </div>
+        <AppLink className={cls.item} to={RoutePath.main} theme={AppLinkTheme.SECONDARY}>
+          <HomeIcon className={cls.icon} />
+          <span className={cls.link}>{t('Главная страница')}</span>
+        </AppLink>
+        <AppLink className={cls.item} to={RoutePath.about} theme={AppLinkTheme.SECONDARY}>
+          <AboutIcon className={cls.icon} />
+          <span className={cls.link}>{t('О сайте')}</span>
+        </AppLink>
       </div>
       <div className={cls.switchers}>
         <ThemeSwitcher />
