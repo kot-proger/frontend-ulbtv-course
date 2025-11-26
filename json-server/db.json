@@ -1,0 +1,11 @@
+{
+  "posts": [
+    { "id": 1, "title": "json-server", "author": "foo" },
+    { "id": 2, "title": "json-server 1", "author": "foo" },
+    { "id": 3, "title": "json-server 2", "author": "foo" },
+    { "id": 4, "title": "json-server 3", "author": "foo" }
+  ],
+  "comments": [{ "id": 1, "body": "some comment", "postId": 1 }],
+  "users": [{ "id": 1, "username": "admin", "password": "123" }],
+  "profile": { "name": "foo" }
+}
