@@ -10,5 +10,7 @@
   "КнопкаОшибки": "BugButton",
   "Войти": "Sign in",
   "increment": "increment",
-  "decrement": "decrement"
+  "decrement": "decrement",
+  "Введите username": "Enter username",
+  "Введите пароль": "Enter password"
 }

@@ -1,4 +1,3 @@
-import { fn } from 'storybook/test';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
 import { Button, ButtonSize, ButtonTheme } from './Button';
@@ -13,7 +12,7 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-  args: { onClick: fn() },
+  args: { onClick: () => {} },
 };
 
 export const Primary = {
