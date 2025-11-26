@@ -8,5 +8,7 @@
   "Произошла непредвиденная ошибка": "Done some error",
   "Обновить страницу": "Reload page",
   "КнопкаОшибки": "BugButton",
-  "Войти": "Sign in"
+  "Войти": "Sign in",
+  "increment": "increment",
+  "decrement": "decrement"
 }
