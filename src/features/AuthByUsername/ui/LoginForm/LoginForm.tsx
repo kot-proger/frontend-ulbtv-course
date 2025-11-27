@@ -1,8 +1,8 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import cls from './LoginForm.module.scss';
 import { Button } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
 import Input from 'shared/ui/Input/Input';
+import cls from './LoginForm.module.scss';
 
 interface LoginFormProps {
   className?: string;

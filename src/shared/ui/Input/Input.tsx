@@ -1,12 +1,13 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import cls from './Input.module.scss';
 import { ChangeEvent, InputHTMLAttributes, memo, useEffect, useRef, useState } from 'react';
+import cls from './Input.module.scss';
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>;
 
 interface InputProps extends HTMLInputProps {
   className?: string;
   value?: string;
+  // eslint-disable-next-line no-unused-vars
   onChange?: (value: string) => void;
   placeholder?: string;
   autofocus?: boolean;
@@ -31,7 +32,7 @@ const Input = memo((props: InputProps) => {
       setIsFocused(true);
       ref.current?.focus();
     }
-  }, []);
+  }, [autofocus]);
 
   const onChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
     onChange?.(event.target.value);
@@ -52,7 +53,7 @@ const Input = memo((props: InputProps) => {
 
   return (
     <div className={classNames(cls.InputWrapper, {}, [className])}>
-      {placeholder && <div className={cls.placeholder}>{placeholder + '>'}</div>}
+      {placeholder && <div className={cls.placeholder}>{`${placeholder}>`}</div>}
       <div className={cls.caretWrapper}>
         <input
           ref={ref}
