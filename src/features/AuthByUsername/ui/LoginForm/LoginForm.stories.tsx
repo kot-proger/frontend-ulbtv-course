@@ -1,3 +1,4 @@
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import LoginForm from './LoginForm';
 
 export default {
@@ -11,4 +12,5 @@ export default {
 
 export const Primary = {
   args: {},
+  decorators: [StoreDecorator({ loginForm: { username: '123', password: '321' } })],
 };

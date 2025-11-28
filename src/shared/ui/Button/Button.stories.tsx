@@ -128,3 +128,11 @@ export const SquareXL = {
     size: ButtonSize.XL,
   },
 };
+
+export const Disabled = {
+  args: {
+    children: 'Disabled',
+    theme: ButtonTheme.BACKGROUND,
+    disabled: true,
+  },
+};

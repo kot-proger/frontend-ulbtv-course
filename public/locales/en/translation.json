@@ -9,8 +9,11 @@
   "Обновить страницу": "Reload page",
   "КнопкаОшибки": "BugButton",
   "Войти": "Sign in",
+  "Выйти": "Sign out",
   "increment": "increment",
   "decrement": "decrement",
   "Введите username": "Enter username",
-  "Введите пароль": "Enter password"
+  "Введите пароль": "Enter password",
+  "Форма авторизации": "Login form",
+  "Неверный логин или пароль": "Invalid login or password"
 }

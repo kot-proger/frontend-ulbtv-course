@@ -1,3 +1,6 @@
+/* eslint-disable react/button-has-type */
+/* eslint-disable react/jsx-props-no-spreading */
+/* eslint-disable no-unused-vars */
 /* eslint-disable object-curly-newline */
 import { classNames } from 'shared/lib/classNames/classNames';
 import React, { ButtonHTMLAttributes } from 'react';
@@ -23,6 +26,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   type?: 'submit' | 'reset' | 'button';
   square?: boolean;
   size?: ButtonSize;
+  disabled?: boolean;
 }
 
 export const Button: React.FC<ButtonProps> = (props) => {
@@ -33,6 +37,7 @@ export const Button: React.FC<ButtonProps> = (props) => {
     type = 'button',
     square,
     size = ButtonSize.M,
+    disabled = false,
     ...otherProps
   } = props;
 
@@ -40,10 +45,16 @@ export const Button: React.FC<ButtonProps> = (props) => {
     [cls[theme]]: true,
     [cls.square]: square,
     [cls[size]]: true,
+    [cls.disabled]: disabled,
   };
 
   return (
-    <button type={type} className={classNames(cls.button, mods, [className])} {...otherProps}>
+    <button
+      disabled={disabled}
+      type={type}
+      className={classNames(cls.button, mods, [className])}
+      {...otherProps}
+    >
       {children}
     </button>
   );

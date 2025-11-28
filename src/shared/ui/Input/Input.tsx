@@ -64,6 +64,7 @@ const Input = memo((props: InputProps) => {
           onBlur={onBlur}
           onFocus={onFocus}
           onSelect={onSelect}
+          // eslint-disable-next-line react/jsx-props-no-spreading
           {...otherProps}
         />
         {isFocused && <span className={cls.caret} style={{ left: `${caretPosition}ch` }} />}
