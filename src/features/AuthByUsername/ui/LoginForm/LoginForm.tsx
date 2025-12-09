@@ -25,6 +25,24 @@ const initialReducers: ReducersList = {
   loginForm: loginReducer,
 };
 
+/**
+ * Компонент формы авторизации пользователя.
+ *
+ * @component
+ * @param {LoginFormProps} props - Свойства компонента LoginForm.
+ * @param {string} [props.className] - Дополнительный CSS-класс для корневого элемента.
+ *
+ * @returns {JSX.Element} Элемент формы авторизации.
+ *
+ * @example
+ * <LoginForm className="my-custom-class" />
+ *
+ * Особенности:
+ * - Асинхронная авторизация пользователя через loginByUsername.
+ * - Управление состоянием формы через Redux.
+ * - Отображение ошибок авторизации.
+ * - Локализация текста через react-i18next.
+ */
 const LoginForm = memo((props: LoginFormProps) => {
   const { className } = props;
   const { t } = useTranslation();
@@ -34,6 +52,12 @@ const LoginForm = memo((props: LoginFormProps) => {
   const error = useSelector(getLoginError);
   const isLoading = useSelector(getLoginIsLoading);
 
+  /**
+   * Обработчик изменения значения поля username.
+   * Диспатчит action установки username в состоянии loginForm.
+   *
+   * @param {string} value - Новое значение username, введённое пользователем.
+   */
   const onChangeUsername = useCallback(
     (value: string) => {
       dispatch(loginActions.setUsername(value));
@@ -41,6 +65,12 @@ const LoginForm = memo((props: LoginFormProps) => {
     [dispatch]
   );
 
+  /**
+   * Обработчик изменения значения поля password.
+   * Диспатчит action установки password в состоянии loginForm.
+   *
+   * @param {string} value - Новое значение password, введённое пользователем.
+   */
   const onChangePassword = useCallback(
     (value: string) => {
       dispatch(loginActions.setPassword(value));
@@ -48,6 +78,13 @@ const LoginForm = memo((props: LoginFormProps) => {
     [dispatch]
   );
 
+  /**
+   * Обработчик события клика по кнопке входа.
+   * Диспатчит асинхронный action loginByUsername с текущими значениями username и password.
+   *
+   * @function
+   * @returns {void}
+   */
   const onLoginClick = useCallback(() => {
     dispatch(loginByUsername({ username, password }));
   }, [dispatch, password, username]);

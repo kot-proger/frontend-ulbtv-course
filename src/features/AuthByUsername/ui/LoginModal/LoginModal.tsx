@@ -11,6 +11,16 @@ interface LoginModalProps {
   onClose: () => void;
 }
 
+/**
+ * Модальное окно для авторизации по логину и паролю.
+ *
+ * @component
+ * @param {Object} props - Свойства компонента
+ * @param {string} [props.className] - Дополнительный CSS-класс для корневого элемента
+ * @param {boolean} props.isOpen - Флаг открытия модального окна
+ * @param {() => void} props.onClose - Функция, вызываемая при закрытии модального окна
+ * @returns {JSX.Element} Модальное окно авторизации
+ */
 const LoginModal = (props: LoginModalProps) => {
   const { className, isOpen, onClose } = props;
 
