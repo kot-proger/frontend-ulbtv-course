@@ -7,7 +7,6 @@ import { memo } from 'react';
 
 export const ThemeSwitcher: React.FC = memo(() => {
   const { theme, toggleTheme } = useTheme();
-  console.log(theme);
 
   return (
     <Button type='button' theme={ButtonTheme.CLEAR} onClick={toggleTheme}>

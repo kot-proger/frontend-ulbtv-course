@@ -25,7 +25,6 @@ export const loginByUsername = createAsyncThunk<
     return response.data;
   } catch (e) {
     // eslint-disable-next-line no-console
-    console.log(e);
     return thunkApi.rejectWithValue(i18n.t('Неверный логин или пароль'));
   }
 });

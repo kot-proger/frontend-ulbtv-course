@@ -11,9 +11,7 @@ const reducers: ReducersList = {
   profile: profileReducer,
 };
 
-interface ProfilePageProps {}
-
-const ProfilePage = ({}: ProfilePageProps) => {
+const ProfilePage = () => {
   const { t } = useTranslation();
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
