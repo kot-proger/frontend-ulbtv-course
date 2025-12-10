@@ -3,7 +3,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable object-curly-newline */
 import { classNames } from 'shared/lib/classNames/classNames';
-import React, { ButtonHTMLAttributes } from 'react';
+import React, { ButtonHTMLAttributes, memo } from 'react';
 import cls from './Button.module.scss';
 
 export enum ButtonTheme {
@@ -29,7 +29,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   disabled?: boolean;
 }
 
-export const Button: React.FC<ButtonProps> = (props) => {
+export const Button: React.FC<ButtonProps> = memo((props: ButtonProps) => {
   const {
     className,
     children,
@@ -58,4 +58,4 @@ export const Button: React.FC<ButtonProps> = (props) => {
       {children}
     </button>
   );
-};
+});

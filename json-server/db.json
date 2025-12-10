@@ -7,5 +7,14 @@
   ],
   "comments": [{ "id": "1", "body": "some comment", "postId": "1" }],
   "users": [{ "id": "1", "username": "admin", "password": "123" }],
-  "profile": { "name": "foo" }
+  "profile": {
+    "firstname": "nik",
+    "lastname": "admin",
+    "age": 22,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "N",
+    "username": "admin",
+    "avatar": "https://cdn1.iconfinder.com/data/icons/cat-28/512/cat-15-512.png"
+  }
 }
