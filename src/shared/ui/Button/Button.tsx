@@ -2,7 +2,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable no-unused-vars */
 /* eslint-disable object-curly-newline */
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import React, { ButtonHTMLAttributes, memo } from 'react';
 import cls from './Button.module.scss';
 
@@ -33,7 +33,7 @@ export const Button: React.FC<ButtonProps> = memo((props: ButtonProps) => {
   const {
     className,
     children,
-    theme,
+    theme = ButtonTheme.OUTLINE,
     type = 'button',
     square,
     size = ButtonSize.M,
@@ -41,7 +41,7 @@ export const Button: React.FC<ButtonProps> = memo((props: ButtonProps) => {
     ...otherProps
   } = props;
 
-  const mods: Record<string, boolean> = {
+  const mods: Mods = {
     [cls[theme]]: true,
     [cls.square]: square,
     [cls[size]]: true,

@@ -12,5 +12,12 @@ export default {
 
 export const Primary = {
   args: {},
-  decorators: [StoreDecorator({ loginForm: { username: '123', password: '321' } })],
+  decorators: [
+    StoreDecorator({
+      loginForm: {
+        username: '123',
+        password: '321',
+      },
+    }),
+  ],
 };

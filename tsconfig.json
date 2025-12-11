@@ -6,6 +6,7 @@
     "target": "ES5",
     "jsx": "react-jsx",
     "allowJs": true,
+    "strict": true,
     "moduleResolution": "node",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -19,9 +20,6 @@
       "module": "CommonJS"
     }
   },
-  "include": ["./config/jest/setupTest.ts",
-    "./src/globals.d.ts", "**/*.ts", "**/*.tsx"],
-  "files": [
-    "./src/globals.d.ts"
-  ]
+  "include": ["./config/jest/setupTest.ts", "./src/globals.d.ts", "**/*.ts", "**/*.tsx"],
+  "files": ["./src/globals.d.ts"]
 }

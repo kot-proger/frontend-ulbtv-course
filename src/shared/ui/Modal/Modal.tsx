@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import { ReactNode, useCallback, useEffect, useRef, useState } from 'react';
 import cls from './Modal.module.scss';
 import { Portal } from '../Portal/Portal';
@@ -18,7 +18,7 @@ export const Modal = (props: ModalProps) => {
 
   const [isClosing, setIsClosing] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
-  const timerRef = useRef<NodeJS.Timeout>();
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     if (isOpen) {
@@ -52,12 +52,12 @@ export const Modal = (props: ModalProps) => {
     if (isOpen) window.addEventListener('keydown', onKeyDown);
 
     return () => {
-      clearTimeout(timerRef.current);
+      if (timerRef.current) clearTimeout(timerRef.current);
       window.removeEventListener('keydown', onKeyDown);
     };
   }, [isOpen, onKeyDown]);
 
-  const mods: Record<string, boolean> = {
+  const mods: Mods = {
     [cls.opened]: isOpen,
     [cls.isClosing]: isClosing,
   };
