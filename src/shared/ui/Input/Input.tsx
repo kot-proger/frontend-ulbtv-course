@@ -2,15 +2,19 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { ChangeEvent, InputHTMLAttributes, memo, useEffect, useRef, useState } from 'react';
 import cls from './Input.module.scss';
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>;
+type HTMLInputProps = Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  'value' | 'onChange' | 'readonly'
+>;
 
 interface InputProps extends HTMLInputProps {
   className?: string;
-  value?: string;
+  value?: string | number;
   // eslint-disable-next-line no-unused-vars
   onChange?: (value: string) => void;
   placeholder?: string;
   autofocus?: boolean;
+  readOnly?: boolean;
 }
 
 const Input = memo((props: InputProps) => {
@@ -21,11 +25,14 @@ const Input = memo((props: InputProps) => {
     placeholder,
     type = 'text',
     autofocus,
+    readOnly = false,
     ...otherProps
   } = props;
   const ref = useRef<HTMLInputElement>(null);
   const [isFocused, setIsFocused] = useState(false);
   const [caretPosition, setCaretPosition] = useState(0);
+
+  const isCaretVisible = isFocused && !readOnly;
 
   useEffect(() => {
     if (autofocus) {
@@ -52,7 +59,7 @@ const Input = memo((props: InputProps) => {
   };
 
   return (
-    <div className={classNames(cls.InputWrapper, {}, [className])}>
+    <div className={classNames(cls.InputWrapper, { [cls.readOnly]: readOnly }, [className])}>
       {placeholder && <div className={cls.placeholder}>{`${placeholder}>`}</div>}
       <div className={cls.caretWrapper}>
         <input
@@ -64,10 +71,11 @@ const Input = memo((props: InputProps) => {
           onBlur={onBlur}
           onFocus={onFocus}
           onSelect={onSelect}
+          readOnly={readOnly}
           // eslint-disable-next-line react/jsx-props-no-spreading
           {...otherProps}
         />
-        {isFocused && <span className={cls.caret} style={{ left: `${caretPosition}ch` }} />}
+        {isCaretVisible && <span className={cls.caret} style={{ left: `${caretPosition}ch` }} />}
       </div>
     </div>
   );

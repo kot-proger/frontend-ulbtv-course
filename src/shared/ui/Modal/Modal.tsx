@@ -24,7 +24,6 @@ export const Modal = (props: ModalProps) => {
     if (isOpen) {
       setIsMounted(true);
     }
-    return () => {};
   }, [isOpen]);
 
   const closeHandler = useCallback(() => {

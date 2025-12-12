@@ -12,7 +12,7 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-  args: { onClick: () => {} },
+  args: { onClick: jest.fn() },
 };
 
 export const Primary = {

@@ -2,5 +2,10 @@
   "Профиль пользователя": "User profile",
   "Редактировать": "Edit",
   "Ваше имя": "Your name",
-  "Ваша фамилия": "Your lastname"
+  "Ваша фамилия": "Your lastname",
+  "Ваш возраст": "Your age",
+  "Ошибка загрузки профиля": "Profile loading error",
+  "Попробуйте обновить страницу": "Try to reload page",
+  "Отменить": "Undo",
+  "Город": "City"
 }

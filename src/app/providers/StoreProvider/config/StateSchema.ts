@@ -12,7 +12,7 @@ import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features/AuthByUsername';
 import { NavigateOptions, To } from 'react-router-dom';
 
-export interface StateScema {
+export interface StateSchema {
   counter: CounterSchema;
   user: UserSchema;
 
@@ -20,16 +20,16 @@ export interface StateScema {
   profile?: ProfileSchema;
 }
 
-export type StateSchemaKey = keyof StateScema;
+export type StateSchemaKey = keyof StateSchema;
 
 export interface ReducerManager {
-  getReducerMap: () => ReducersMapObject<StateScema>;
-  reduce: (state: StateScema, action: AnyAction) => CombinedState<StateScema>;
+  getReducerMap: () => ReducersMapObject<StateSchema>;
+  reduce: (state: StateSchema, action: AnyAction) => CombinedState<StateSchema>;
   add: (key: StateSchemaKey, reducer: Reducer) => void;
   remove: (key: StateSchemaKey) => void;
 }
 
-export interface ReduxStoreWithManager extends EnhancedStore<StateScema> {
+export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
   reducerManager?: ReducerManager;
 }
 
@@ -41,4 +41,5 @@ export interface ThunkExtra {
 export interface ThunkConfig<T> {
   rejectValue: T;
   extra: ThunkExtra;
+  state: StateSchema;
 }

@@ -9,15 +9,15 @@ import { counterReducer } from 'entities/Counter';
 import { userReducer } from 'entities/User';
 import { $api } from 'shared/api/api';
 import { NavigateOptions, To } from 'react-router-dom';
-import type { StateScema } from './StateSchema';
+import type { StateSchema } from './StateSchema';
 import { createReducerManager } from './reducerManager';
 
 export function createReduxStore(
-  initialState: StateScema,
-  asyncReducers?: ReducersMapObject<StateScema>,
+  initialState: StateSchema,
+  asyncReducers?: ReducersMapObject<StateSchema>,
   navigate?: (to: To, options?: NavigateOptions) => void
 ) {
-  const rootReducers: ReducersMapObject<StateScema> = {
+  const rootReducers: ReducersMapObject<StateSchema> = {
     ...asyncReducers,
     counter: counterReducer,
     user: userReducer,
@@ -26,7 +26,7 @@ export function createReduxStore(
   const reducerManager = createReducerManager(rootReducers);
 
   const store = configureStore({
-    reducer: reducerManager.reduce as Reducer<CombinedState<StateScema>>,
+    reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>>,
     devTools: __IS_DEV__,
     preloadedState: initialState,
     middleware: (getDefaultMiddleware) =>
