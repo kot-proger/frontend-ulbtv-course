@@ -8,7 +8,7 @@ import { useCallback } from 'react';
 import cls from './ProfilePageHeader.module.scss';
 
 const ProfilePageHeader = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('profile');
   const dispatch = useAppDispatch();
   const readOnly = useSelector(getProfileReadOnly);
 

@@ -34,7 +34,7 @@ describe('loginByUsername.test', () => {
   });
 
   // let dispatch: Dispatch;
-  // let getState: () => StateScema;
+  // let getState: () => StateSchema;
   // beforeEach(() => {
   //   dispatch = jest.fn();
   //   getState = jest.fn();

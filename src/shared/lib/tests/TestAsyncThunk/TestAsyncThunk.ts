@@ -1,5 +1,5 @@
 import { AsyncThunkAction } from '@reduxjs/toolkit';
-import { StateScema } from 'app/providers/StoreProvider';
+import { StateSchema } from 'app/providers/StoreProvider';
 import axios, { AxiosStatic } from 'axios';
 
 type ActionCreatorType<Return, Arg, RejectedValue> = (
@@ -13,7 +13,7 @@ const mockedAxios = jest.mocked(axios, true);
 class TestAsyncThunk<Return, Arg, RejectedValue> {
   dispatch: jest.Mocked<any>;
 
-  getState: () => StateScema;
+  getState: () => StateSchema;
 
   actionCreator: ActionCreatorType<Return, Arg, RejectedValue>;
 

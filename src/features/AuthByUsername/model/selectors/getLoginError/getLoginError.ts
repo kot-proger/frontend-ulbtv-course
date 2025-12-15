@@ -1,4 +1,4 @@
-import { StateScema } from 'app/providers/StoreProvider';
+import { StateSchema } from 'app/providers/StoreProvider';
 import { getLoginState } from '../getLoginState/getLoginState';
 
-export const getLoginError = (state: StateScema) => getLoginState(state)?.error || '';
+export const getLoginError = (state: StateSchema) => getLoginState(state)?.error || '';
