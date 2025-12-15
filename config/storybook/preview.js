@@ -1,7 +1,7 @@
 /** @type { import('@storybook/react-webpack5').Preview } */
 
 import { Theme } from 'app/providers/ThemeProvider';
-import { RouterDecorator } from 'shared/config/storybook/RouterDecorator/RouterDecoratot';
+import { RouterDecorator } from 'shared/config/storybook/RouterDecorator/RouterDecorator';
 import { StyleDecorator } from 'shared/config/storybook/StyleDecoracor/StyleDecorator';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import 'loki/configure-react';
